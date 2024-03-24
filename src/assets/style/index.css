@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Kulim+Park:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+@layer components {
+  .custom_transition {
+    @apply duration-300 transition-all;
+  }
+
+  .custom_shadow {
+    @apply shadow-lg;
+  }
+
+  .filter-bg {
+    @apply shadow-CardShadow bg-white px-5 mt-[15px] py-3 rounded-[15px];
+  }
+
+  .table_td_th {
+    @apply py-2.5;
+  }
+
+  .app-table-bg {
+    @apply mt-[15px] shadow-CardShadow py-5 px-3 bg-white rounded-[15px];
+  }
+}
+
+* {
+  font-family: "Kulim Park", sans-serif;
+  outline: none;
+}
+
+.add_product_section {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+
+.show_product_section {
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  visibility: visible;
+  opacity: 1;
+  backdrop-filter: blur(3px);
+}
+
+.hide_product_section {
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show_product_from {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(0%);
+  transition-delay: 0.1s;
+  box-shadow: 0px 20px 30px #999;
+}
+
+.hide_product_from {
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(200%);
+  transition-delay: 0.1s;
+}
+
+.focus_input input {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.focus_input input:focus,
+.focus_input input:not(:placeholder-shown) {
+  border: 1px solid #ef5523;
+}
+
+.focus_input input:not(:placeholder-shown) ~ .span_label,
+.focus_input input:focus ~ .span_label {
+  transform: translateY(-10px);
+  color: #ef5523 !important;
+  padding-right: 2px;
+}
+
+.focus_input .span_label {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateY(12px);
+  left: 16px;
+  color: #999;
+  font-size: 13px !important;
+  padding-right: 50px;
+}
+
+/* ===REACT DATE PICKER STYLE */
+.date__picker .react-datepicker {
+  font-family: inherit !important;
+  border: none !important;
+  box-shadow: 3px 3px 18px #30bfbf14;
+}
+
+.date__picker .react-datepicker__navigation-icon--next::before,
+.date__picker .react-datepicker__navigation-icon--previous::before,
+.date__picker .react-datepicker__navigation-icon--next:hover,
+.date__picker .react-datepicker__navigation-icon--previous:hover {
+  color: #fff !important;
+  border-color: #fff;
+}
+
+.date__picker .react-datepicker__header {
+  background-color: #ef5523;
+  border: none !important;
+}
+
+.date__picker .react-datepicker__current-month {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.date__picker .react-datepicker__day--selected,
+.date__picker .react-datepicker__day--keyboard-selected {
+  background-color: #ef5523;
+  color: #fff;
+}
+
+.date__picker .react-datepicker__day--selected:hover,
+.date__picker .react-datepicker__day--keyboard-selected:hover {
+  background-color: #f3805a;
+}
+
+.date__picker .react-datepicker__navigation-icon::before {
+  top: 16px !important;
+}
+
+.date__picker
+  .react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::after {
+  display: none;
+}
+
+.date__picker .react-datepicker__day-name {
+  color: #fff;
+}
+
+/* ===REACT SELECT STYLE ====*/
+.search_dropDown .css-b62m3t-container {
+  background-color: transparent !important;
+  border-width: 0px !important;
+  border-color: transparent !important;
+  border-style: none !important;
+  height: 100% !important;
+}
+
+.search_dropDown .css-1jqq78o-placeholder {
+  font-size: 13px;
+}
+
+.search_dropDown .css-1dimb5e-singleValue,
+.search_dropDown .css-qbdosj-Input {
+  padding-left: 6px;
+}
+
+.search_dropDown .css-t3ipsp-control,
+.search_dropDown .css-13cymwt-control {
+  min-height: 100%;
+  box-shadow: none;
+  border-color: none !important;
+  border-radius: 0px;
+  border-style: none;
+  border-width: 1px;
+  background-color: transparent !important;
+}
+
+.search_dropDown .css-1xc3v61-indicatorContainer {
+  padding: 0 8px !important;
+}
+
+.search_dropDown .css-1n6sfyn-MenuList .css-d7l1ni-option {
+  background-color: #ef5523;
+  color: #fff;
+}
+
+.search_dropDown .css-1n6sfyn-MenuList .css-tr4s17-option {
+  background-color: #ef9070;
+}
+
+.search_dropDown .css-t3ipsp-control:hover,
+.search_dropDown .css-13cymwt-control:hover {
+  border-color: none !important;
+}
+
+/* pagination */
+.pagination {
+  text-decoration: none;
+  @apply flex gap-x-2 justify-end mt-6;
+}
+
+.pagination > .active > a {
+  background-color: #ef5523;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  background-color: #fff;
+  color: black !important;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.pagination > li > a {
+  border: 1px solid #ef5523;
+  /* padding: 5px 10px; */
+  @apply rounded-md py-2 px-4 text-[13px];
+
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  color: #009ef7;
+  background-color: rgb(255, 255, 255);
+}
